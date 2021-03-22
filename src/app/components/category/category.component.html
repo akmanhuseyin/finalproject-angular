@@ -1,0 +1,16 @@
+<ul class="list-group">
+  
+  <li (click)="setAllCategory()" [class]="getAllCategoryClass()" routerLink = "/products"> Tüm Ürünler </li>
+  <li
+      routerLink = "/products/category/{{ category.categoryId }}"
+    (click)="setCurrentCategory(category)"
+    [class]="getCurrentCategoryClass(category)"
+    *ngFor="let category of categories"
+  >
+    {{ category.categoryName }}
+  </li>
+  <!-- önce ngFor çalışıyor sonra click. category kullanıyor bu sayede. -->
+</ul>
+<!-- <h5 *ngIf="currentCategory">{{ currentCategory.categoryName }}</h5> -->
+
+<!--  -->
